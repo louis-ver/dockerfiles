@@ -24,3 +24,4 @@ RUN build_deps=' \
         && apk del --purge $build_deps
 
 ENTRYPOINT ["ansible"]
+CMD ["--help"]
