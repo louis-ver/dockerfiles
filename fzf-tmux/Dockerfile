@@ -3,10 +3,10 @@ LABEL maintainer Louis-Olivier Guérin <hi@louisolivier.com>
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    git \
-    curl \
-    tmux
+        ca-certificates \
+        git \
+        curl \
+        tmux
 
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git /usr/src/fzf \
     && /usr/src/fzf/install \
@@ -14,4 +14,4 @@ RUN git clone --depth 1 https://github.com/junegunn/fzf.git /usr/src/fzf \
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["fzf-tmux"]
